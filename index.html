@@ -32,31 +32,38 @@
         <p class="push-bottom">You <strong>know</strong> you want to.</p>
       </p>
     </div>
+
         <div class="form-box">
-          <div class="push-left">
-            <p>ONE OF US!! ONE OF US!!</p>
+            <p class="push-left">ONE OF US!! ONE OF US!!</p>
             <form action="" method="post">
-              <label for="first_name">First Name*</label>
-              <input type="text" id="first_name" name="first_name" placeholder="Joe" required>
+              <div class="my-form">
+                <div class="position-elements">
+                  <label for="first_name">First Name*</label>
+                  <input type="text" id="first_name" name="first_name" placeholder="Joe" required>
 
-              <label for="last_name">Last Name</label>
-              <input type="text" id="last_name" name="last_name" placeholder="Bloggins"> 
+                  <label for="email">Email*</label>
+                  <input type="email" id="email" name="email" placeholder="joebloggins@example.com" required>
 
-              <label for="email">Email*</label>
-              <input type="email" id="email" name="email" placeholder="joebloggins@example.com" required>
+                  <label for="password">Password*</label>
+                  <input type="password" id="password" name="password" placeholder="Password#1" required>
+                </div>
+
+                <div class="position-elements">
+                  <label for="last_name">Last Name</label>
+                  <input type="text" id="last_name" name="last_name" placeholder="Bloggins"> 
           
-              <label for="phone_number">Phone Number</label>
-              <input type="tel" id="phone_number" name="phone_number" placeholder="1234567891">
+                  <label for="phone_number">Phone Number</label>
+                  <input type="tel" id="phone_number" name="phone_number" placeholder="1234567891">
 
-              <label for="password">Password*</label>
-              <input type="password" id="password" name="password" placeholder="Password#1" required>
-
-              <label for="confirm_password">Confirm Password*</label>
-              <input type="password" id="confirm_password" name="confirm_password" placeholder="Password#1" required>
+                  <label for="confirm_password">Confirm Password*</label>
+                  <input type="password" id="confirm_password" name="confirm_password" placeholder="Password#1" required>
+                </div>
+              </div>
               
-              <button type="submit">Create Account</button>
+              <div class="position-elements">
+                <button type="submit">Create Account</button>
+              </div>
             </form>
-          </div>
         </div>
 
         <div class="push-top">
