@@ -42,10 +42,11 @@
                   <input type="text" id="first_name" name="first_name" placeholder="Joe" required>
 
                   <label for="email">Email*</label>
-                  <input type="email" id="email" name="email" placeholder="joebloggins@example.com" required>
+                  <input type="email" id="email" name="email" placeholder="joebloggins@example.com" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}" required>
 
                   <label for="password">Password*</label>
-                  <input type="password" id="password" name="password" placeholder="Password#1" required>
+                  <input type="password" id="password" name="password" placeholder="Password#1" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required>
+                  <div class="message"></div>
                 </div>
 
                 <div class="position-elements">
@@ -53,10 +54,10 @@
                   <input type="text" id="last_name" name="last_name" placeholder="Bloggins"> 
           
                   <label for="phone_number">Phone Number</label>
-                  <input type="tel" id="phone_number" name="phone_number" placeholder="1234567891">
+                  <input type="tel" id="phone_number" name="phone_number" placeholder="1234567890" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
 
                   <label for="confirm_password">Confirm Password*</label>
-                  <input type="password" id="confirm_password" name="confirm_password" placeholder="Password#1" required>
+                  <input type="password" id="confirm_password" name="confirm_password" placeholder="Password#1" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required>
                 </div>
               </div>
               
@@ -72,12 +73,26 @@
 
   </div>
 
-<script defer>
+<script>
   const button = document.querySelector('button')
+  const msg = document.querySelector('.message')
+  let password = document.getElementById('password')
+  let confirmPassword = document.getElementById('confirm_password')
 
-  button.addEventListener('click', () => {
+  button.addEventListener('click', () =>{
     document.getElementById('Form').className='submitted'
+
+    if (password.value != confirmPassword.value) {
+      msg.textContent='*Passwords do not match'
+      password.setCustomValidity('Minimum eight characters, at least one letter, one number and one special character')
+      confirmPassword.setCustomValidity('Invalid')
+    } else {
+      password.setCustomValidity('')
+      confirmPassword.setCustomValidity('')
+      msg.textContent=''
+    }
   })
+
 </script>
 
 </body>
