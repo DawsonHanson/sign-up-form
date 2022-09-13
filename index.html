@@ -35,7 +35,7 @@
 
         <div class="form-box">
             <p class="push-left">ONE OF US!! ONE OF US!!</p>
-            <form action="" method="post">
+            <form id="Form" action="" method="post">
               <div class="my-form">
                 <div class="position-elements">
                   <label for="first_name">First Name*</label>
@@ -71,7 +71,15 @@
         </div>
 
   </div>
-    
+
+<script defer>
+  const button = document.querySelector('button')
+
+  button.addEventListener('click', () => {
+    document.getElementById('Form').className='submitted'
+  })
+</script>
+
 </body>
 
 </html>
